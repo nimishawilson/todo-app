@@ -1,5 +1,14 @@
 <mat-grid-list cols=4 rowHeight="100px">
-    <mat-grid-tile> tile 1 </mat-grid-tile>
+    <mat-grid-tile>
+        <a class="username-button" mat-raised-button [matMenuTriggerFor]="menu"> 
+            nimishawilson333@gmail.com
+             <mat-icon> keyboard_arrow_down </mat-icon> 
+            </a>
+        <mat-menu xPosition="before" #menu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>signout</button>
+        </mat-menu>
+    </mat-grid-tile>
     <mat-grid-tile> </mat-grid-tile>
     <mat-grid-tile> </mat-grid-tile>
     <mat-grid-tile>
