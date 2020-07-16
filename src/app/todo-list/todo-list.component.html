@@ -1,9 +1,9 @@
 <mat-grid-list cols=4 rowHeight="100px">
     <mat-grid-tile>
-        <a class="username-button" mat-raised-button [matMenuTriggerFor]="menu"> 
+        <a class="username-button" mat-raised-button [matMenuTriggerFor]="menu">
             nimishawilson333@gmail.com
-             <mat-icon> keyboard_arrow_down </mat-icon> 
-            </a>
+            <mat-icon> keyboard_arrow_down </mat-icon>
+        </a>
         <mat-menu xPosition="before" #menu="matMenu">
             <button mat-menu-item>Profile</button>
             <button mat-menu-item>signout</button>
@@ -17,5 +17,60 @@
         </button>
     </mat-grid-tile>
 </mat-grid-list>
-
-<mat-card>Simple card</mat-card>
+<mat-card>
+    <mat-card>
+        <mat-grid-list cols=4 rowHeight="50px">
+            <mat-grid-tile>
+                <mat-checkbox> </mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <div>
+                    <strong> Lorem ipsum dolor </strong> <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius sunt 
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="material-icons">
+                    delete
+                </span>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+    <mat-card>
+        <mat-grid-list cols=4 rowHeight="50px">
+            <mat-grid-tile>
+                <mat-checkbox> </mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <div>
+                    <strong> Lorem ipsum dolor </strong> <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius sunt 
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="material-icons">
+                    delete
+                </span>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+    <mat-card>
+        <mat-grid-list cols=4 rowHeight="50px">
+            <mat-grid-tile>
+                <mat-checkbox> </mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <div>
+                    <strong> Study maths </strong> <br>
+                    complete all topics in first chapter, study all equations, do
+                    extra problems 
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="material-icons">
+                    delete
+                </span>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</mat-card>
