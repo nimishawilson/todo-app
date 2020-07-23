@@ -18,52 +18,15 @@
     </mat-grid-tile>
 </mat-grid-list>
 <mat-card>
-    <mat-card>
+    <mat-card *ngFor="let item of toDoListData; let i=index">
         <mat-grid-list cols=4 rowHeight="50px">
             <mat-grid-tile>
-                <mat-checkbox> </mat-checkbox>
+                <mat-checkbox [checked]="item.complete" (change)="markAsDone($event, item.id)"> </mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile colspan="2">
-                <div>
-                    <strong> Lorem ipsum dolor </strong> <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius sunt 
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <span class="material-icons">
-                    delete
-                </span>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-card>
-    <mat-card>
-        <mat-grid-list cols=4 rowHeight="50px">
-            <mat-grid-tile>
-                <mat-checkbox> </mat-checkbox>
-            </mat-grid-tile>
-            <mat-grid-tile colspan="2">
-                <div>
-                    <strong> Lorem ipsum dolor </strong> <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius sunt 
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <span class="material-icons">
-                    delete
-                </span>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-card>
-    <mat-card>
-        <mat-grid-list cols=4 rowHeight="50px">
-            <mat-grid-tile>
-                <mat-checkbox> </mat-checkbox>
-            </mat-grid-tile>
-            <mat-grid-tile colspan="2">
-                <div>
-                    <strong> Study maths </strong> <br>
-                    complete all topics in first chapter, study all equations, do
-                    extra problems 
+                <div [ngClass]="{ strikeText: item.complete === true }">
+                    <strong> {{ item.title }} </strong> <br>
+                    {{ item.description }}
                 </div>
             </mat-grid-tile>
             <mat-grid-tile>
