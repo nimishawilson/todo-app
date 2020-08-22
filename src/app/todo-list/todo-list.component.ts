@@ -56,7 +56,7 @@ export class TodoListComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       width: '500px',
-      height: '350px',
+      height: '300px',
     });
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
