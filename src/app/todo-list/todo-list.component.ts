@@ -81,6 +81,7 @@ export class TodoListComponent implements OnInit {
 @Component({
   selector: 'dialog-overview-example-dialog',
   templateUrl: 'pop-up.component.html',
+  styleUrls: ['./todo-list.component.scss'],
 })
 export class DialogOverviewExampleDialog {
   constructor(

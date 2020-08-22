@@ -8,3 +8,22 @@ mat-card {
   text-decoration: line-through;
   color: gray;
 }
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 18px 0px;
+  margin: 8px 0;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  outline: none;
+  display:block;
+ }
+
+input[type="text"]:focus,
+textarea:focus {
+  border-width: 1px;
+  border-color: #3f51b5;
+}
