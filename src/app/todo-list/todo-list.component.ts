@@ -1,4 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-todo-list',
@@ -9,7 +19,7 @@ export class TodoListComponent implements OnInit {
   isNoteChecked: boolean;
   toDoListData: any;
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.toDoListData = [
@@ -43,6 +53,15 @@ export class TodoListComponent implements OnInit {
       },
     ];
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '500px',
+      height: '350px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
+  }
 
   markAsDone(event, id) {
     this.isNoteChecked = event.checked;
@@ -56,5 +75,20 @@ export class TodoListComponent implements OnInit {
         break;
       }
     }
+  }
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'pop-up.component.html',
+})
+export class DialogOverviewExampleDialog {
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
